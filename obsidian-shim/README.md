@@ -9,6 +9,7 @@ This repository aims to create a RESTful API to access the Obsidian SDK.
 
   **Schema**
 
+
   {
 
     APIKEY: string
