@@ -75,7 +75,7 @@ settings.json
 &nbsp;&nbsp;&nbsp;Requires you populate APIKEY and SERVICEID. Optionally rename TENANTID.  
 &nbsp;&nbsp;&nbsp;Feel free to add/modify settings.  
 
-users.json
+users.json  
 &nbsp;&nbsp;&nbsp;Requires you populate APIKEY and SERVICEID. Optionally rename TENANTID.  
 &nbsp;&nbsp;&nbsp;Feel free to add/modify actual data
 
