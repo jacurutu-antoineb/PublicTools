@@ -1,0 +1,19 @@
+{
+   "APIKEY": "",
+   "SERVICEID": "",
+   "TENANTID": "test_application",
+   "SETTINGS": [
+       [
+        "user.management.account.lock.timeout",
+        "Account Lock Timeout",
+        "number",
+        15
+       ],
+       [
+        "security.access.ip.whitelist",
+        "IP Whitelist",
+        "string_array",
+        ["192.168.1.0/24", "10.0.0.0/8"]
+       ]
+   ]
+}
