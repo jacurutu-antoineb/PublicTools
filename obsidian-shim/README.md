@@ -5,22 +5,22 @@ This repository aims to create a RESTful API to access the Obsidian SDK.
 #### LIST API Endpoints
   **GET** /
 #### Update application settings
-  **POST** /settings
+**POST** /settings
 
-  **Schema**  
+**Schema**  
   
-  {  
-    APIKEY: string  
-    SERVICEID: string  
-    TENANTID: string  
-    SETTINGS: [  
-      [  
-        string,              The setting as seen in the app  
-        string,              Description of the setting  
-        string,              Datatype of the setting, defines next parameter  
-        value                The value of the setting  
-      ]  
-  }  
+    {  
+      APIKEY: string  
+      SERVICEID: string  
+      TENANTID: string  
+      SETTINGS: [  
+        [  
+          string,              The setting as seen in the app  
+          string,              Description of the setting  
+          string,              Datatype of the setting, defines next parameter  
+          value                The value of the setting  
+        ]  
+    }  
 
         
 #### Update application accounts
