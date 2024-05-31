@@ -2,6 +2,9 @@
 This repository aims to create a RESTful API to access the Obsidian SDK. The JSON objects map very directly to how they are modelled in the SDK, so you'll certainly want to reference the Obsidian SDK documentation.
 https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introduction-to-datatypes-and-endpoints
 
+## Application Gateway Container
+This is a rudimentary container that lumps in the python wheel, a flask http app and redirects queries to the SDK. It parses the Obsidian API key and session id / tenant ID from the underlying API body as opposed to at the parameter level. I have removed JWT signature validation...this is not meant to be production grade, but if you need a RESTful API to the Obsidian platform this will achieve that end.
+
 ### API Endpoints:
 #### LIST API Endpoints
 &nbsp;&nbsp;&nbsp;&nbsp;**GET** /
