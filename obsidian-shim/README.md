@@ -3,11 +3,11 @@ This repository aims to create a RESTful API to access the Obsidian SDK.
 
 ### API Endpoints:
 #### LIST API Endpoints
-  **GET** /
+&nbsp;&nbsp;&nbsp;&nbsp;**GET** /
 #### Update application settings
-**POST** /settings
+&nbsp;&nbsp;&nbsp;&nbsp;**POST** /settings
 
-**Schema**  
+&nbsp;&nbsp;&nbsp;&nbsp;**Schema**  
   
     {  
       APIKEY: string  
