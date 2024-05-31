@@ -7,6 +7,7 @@ https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introd
 &nbsp;&nbsp;&nbsp;&nbsp;**GET** /
 #### Update application settings
 &nbsp;&nbsp;&nbsp;&nbsp;**POST** /settings  
+&nbsp;&nbsp;&nbsp;&nbsp;**Request Body** Application/json  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It will be beneficial to refer to the official Obsidian documentation for datatypes to understand how to format this object. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introduction-to-datatypes-and-endpoints/platform-settings
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Schema**  
@@ -27,6 +28,7 @@ https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introd
         
 #### Update application accounts
 &nbsp;&nbsp;&nbsp;&nbsp;**POST** /users  
+&nbsp;&nbsp;&nbsp;&nbsp;**Request Body** Application/json  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It will be beneficial to refer to the
 official Obsidian documentation for datatypes to understand how to format this o
 bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introduction-to-datatypes-and-endpoints/accounts
