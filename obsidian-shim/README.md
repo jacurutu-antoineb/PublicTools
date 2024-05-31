@@ -39,27 +39,27 @@ bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections
       TENANTID: string
       USERS: [
         [
-          string,        # Unique identifier for user  
-          string,        # User's full name  
-          string,        # User's e-mail address        
-          string,        # User's username  
-          string,        # User's department  
-          string,        # User's job title  
-          set[string],   # Array of user's group membership         
-          set[string],   # Array of user's roles         
-          set[string],   # Array of user's permissions        
-          bool,          # Indicates if user is a service integration account
-          bool,          # Indicates if the account is enabled
-          bool,          # Indicates if local login is enabled for the user
-          bool,          # Indicates if Single Sign-On is enabled for the user
-          bool,          # Indicates if Single Sign-On is enforced for the user        
-          bool,          # Indicates if Multi-Factor Authentication is enforced for the user  
-          int,           # User's session timeout in minutes
-          datetime,      # Date and time of the user's last successful login
-          datetime,      # Date and time the user was created
-          string,        # E-mail of the user or process that created the user
-          datetime,      # Date and time the user was last updated
-          string,        # E-mail of the user or process that updated the user
+          string,                # Unique identifier for user  
+          string,                # User's full name  
+          string,                # User's e-mail address        
+          string,                # User's username  
+          string,                # User's department  
+          string,                # User's job title  
+          set[string],           # Array of user's group membership         
+          set[string],           # Array of user's roles         
+          set[string],           # Array of user's permissions        
+          string[bool],          # Indicates if user is a service integration account
+          string[bool],          # Indicates if the account is enabled
+          string[bool],          # Indicates if local login is enabled for the user
+          string[bool],          # Indicates if Single Sign-On is enabled for the user
+          string[bool],          # Indicates if Single Sign-On is enforced for the user        
+          string[bool],          # Indicates if Multi-Factor Authentication is enforced for the user  
+          int,                   # User's session timeout in minutes
+          string[datetime],      # Date and time of the user's last successful login
+          string[datetime],      # Date and time the user was created
+          string,                # E-mail of the user or process that created the user
+          string[datetime],      # Date and time the user was last updated
+          string,                # E-mail of the user or process that updated the user
         ]
     }
 
