@@ -24,10 +24,10 @@ This repository aims to create a RESTful API to access the Obsidian SDK.
 
         
 #### Update application accounts
-  **POST** /users
+&nbsp;&nbsp;&nbsp;&nbsp;**POST** /users
 
 
-EXAMPLES:
+## EXAMPLES:
 Under the test directory you can see a functional example of using the REST API.
 The shell script testapp_api.sh requires that you add an endpoint URL (functioning example at https://obsapi.faboucha.info). 
 testapp_api.sh:
