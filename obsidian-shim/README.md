@@ -64,7 +64,7 @@ bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections
     }
 
 
-## EXAMPLES:
+### test/testapp_api.sh:
 Under the test directory you can see a functional example of using the REST API.
 The shell script testapp_api.sh requires that you add an endpoint URL (functioning example at https://obsapi.faboucha.info).   
 testapp_api.sh:  
