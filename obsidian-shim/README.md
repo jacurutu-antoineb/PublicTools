@@ -53,6 +53,8 @@ bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections
     updated_on: datetime         # Date and time the user was last updated
     updated_by: str | None       # E-mail of the user or process that updated the user
 
+&nbsp;&nbsp;&nbsp;&nbsp;**Schema**
+
     {
       APIKEY: string
       SERVICEID: string
