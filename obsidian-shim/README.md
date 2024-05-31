@@ -31,28 +31,6 @@ https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introd
 official Obsidian documentation for datatypes to understand how to format this o
 bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections/introduction-to-datatypes-and-endpoints/accounts
 
-    id: str                      # Unique identifier for user
-    name: str                    # User's full name
-    email: str                   # User's e-mail address
-    username: str                # User's username
-    department: str | None       # User's department
-    title: str                   # User's job title
-    groups: set[str]             # Array of user's group membership
-    roles: set[str]              # Array of user's roles
-    permissions: set[str]        # Array of user's permissions
-    integration_user: bool       # Indicates if user is a service integration account
-    enabled: bool                # Indicates if the account is enabled
-    local_login_enabled: bool    # Indicates if local login is enabled for the user
-    sso_enabled: bool            # Indicates if Single Sign-On is enabled for the user
-    sso_enforced: bool           # Indicates if Single Sign-On is enforced for the user
-    mfa_enforced: bool           # Indicates if Multi-Factor Authentication is enforced for the user
-    timeout: int                 # User's session timeout in minutes
-    last_successful_login: datetime | None  # Date and time of the user's last successful login
-    created_on: datetime         # Date and time the user was created
-    created_by: str              # E-mail of the user or process that created the user
-    updated_on: datetime         # Date and time the user was last updated
-    updated_by: str | None       # E-mail of the user or process that updated the user
-
 &nbsp;&nbsp;&nbsp;&nbsp;**Schema**
 
     {
@@ -61,10 +39,27 @@ bject. https://docs.obsidiansecurity.com/obsidian/connections/custom-connections
       TENANTID: string
       USERS: [
         [
-          string,              The setting as seen in the app
-          string,              Description of the setting
-          string,              Datatype of the setting, defines next parameter
-          value                The value of the setting
+          string,        # Unique identifier for user  
+          string,        # User's full name  
+          string,        # User's e-mail address        
+          string,        # User's username  
+          string,        # User's department  
+          string,        # User's job title  
+          set[string],   # Array of user's group membership         
+          set[string],   # Array of user's roles         
+          set[string],   # Array of user's permissions        
+          bool,          # Indicates if user is a service integration account
+          bool,          # Indicates if the account is enabled
+          bool,          # Indicates if local login is enabled for the user
+          bool,          # Indicates if Single Sign-On is enabled for the user
+          bool,          # Indicates if Single Sign-On is enforced for the user        
+          bool,          # Indicates if Multi-Factor Authentication is enforced for the user  
+          int,           # User's session timeout in minutes
+          datetime,      # Date and time of the user's last successful login
+          datetime,      # Date and time the user was created
+          string,        # E-mail of the user or process that created the user
+          datetime,      # Date and time the user was last updated
+          string,        # E-mail of the user or process that updated the user
         ]
     }
 
