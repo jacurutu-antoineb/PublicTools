@@ -8,7 +8,9 @@ This repository aims to create a RESTful API to access the Obsidian SDK.
   **POST** /settings
 
   **Schema**
+
   {
+
     APIKEY: string
 
     SERVICEID: string
