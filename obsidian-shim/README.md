@@ -72,5 +72,10 @@ testapp_api.sh:
    LOCAL - Optional parameter in case you want to clone the json files and update with your parameters.  
 
 settings.json  
-  Requires you populate APIKEY and SERVICEID. Optionally rename TENANTID.  
-  Feel free to add/modify settings.  
+&nbsp;&nbsp;&nbsp;Requires you populate APIKEY and SERVICEID. Optionally rename TENANTID.  
+&nbsp;&nbsp;&nbsp;Feel free to add/modify settings.  
+
+users.json
+&nbsp;&nbsp;&nbsp;Requires you populate APIKEY and SERVICEID. Optionally rename TENANTID.  
+&nbsp;&nbsp;&nbsp;Feel free to add/modify actual data
+
