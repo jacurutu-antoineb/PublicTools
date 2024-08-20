@@ -1,0 +1,9 @@
+DATA TO PULL
+DAILY:
+  - Score
+  - Posture: Crit
+  - Posture: High
+  - Posture: Med
+  - Compliance
+  - Per App violations
+

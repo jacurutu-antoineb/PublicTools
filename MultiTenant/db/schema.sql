@@ -1,0 +1,44 @@
+CREATE DATABASE IF NOT EXISTS obsmulti;
+
+USE obsmulti;
+
+CREATE TABLE IF NOT EXISTS users (
+	userid INT AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(50) NOT NULL UNIQUE,
+	password VARCHAR(100),
+	sso BOOLEAN NOT NULL default false);
+
+CREATE TABLE IF NOT EXISTS active_sessions (
+	session_id INT AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	userid INT,
+	userip VARCHAR(50),
+	expires BIGINT);
+
+CREATE TABLE IF NOT EXISTS apitoken_data (
+	token_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+	userid INT NOT NULL,
+	token VARCHAR(2000) NOT NULL ,
+	api_endpoint VARCHAR(150) default 'https://api.obsec.io/v1/gql',
+	token_name VARCHAR(50) default '',
+        UNIQUE KEY (userid, token));
+
+CREATE TABLE IF NOT EXISTS tenant_data (
+	token_id INT NOT NULL PRIMARY KEY UNIQUE,
+	posture_score_last_dy INT,
+	posture_score_last_dy_ts BIGINT,
+	posture_score_last_wk INT,
+	posture_score_last_wk_ts BIGINT
+	);
+
+
+INSERT INTO users (username, password, sso) VALUES
+  ('admin', 'password', false);
+
+INSERT INTO apitoken_data (userid, token, api_endpoint, token_name) VALUES
+('1', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYXBpIiwidXNlcl9pZCI6NTA1Mjg0MDM0OTUwNzYyMzkzLCJvcmdfaWQiOiJxcGx5eHJyd3h2cmp6YXp2Iiwib3JnX25hbWUiOiJPYnNpZGlhbiBEZW1vIEFjY291bnQiLCJyb2xlIjo5LCJ1c2VyX2hhc2giOiJkYjI4NzRjZjc4ZjJmY2M5MWRjMDc5Y2M2ZWVlYTUxMzViZmZjZWE1ZGM1YmUxZDFmNjg4N2Q3Yjc2YjI1OGM1IiwibmFtZSI6IkFudG9pbmUgQm91Y2hhcmQiLCJnaXZlbl9uYW1lIjoiQW50b2luZSIsImZhbWlseV9uYW1lIjoiQm91Y2hhcmQiLCJlbWFpbCI6ImFib3VjaGFyZEBvYnNpZGlhbnNlY3VyaXR5LmNvbSIsImFkZHJlc3MiOnt9LCJ0ZW5hbnRfcHJpdmlsZWdlcyI6W3sic2VydmljZSI6IioiLCJ0ZW5hbnRzIjpbIioiXX1dLCJtb2R1bGVfcHJpdmlsZWdlcyI6WyIqIl0sImF1ZCI6ImRlbW8iLCJleHAiOjE3NDg5OTAzNzk4OTgsImp0aSI6IjVjNjc4MDZhLTg4NjktNDkwOS1iNjk1LWY1YTdkZmZkNGQ4NiIsImlhdCI6MTcxNzQ1NDM5NiwiaXNzIjoib2JzZWMtdGVzdC5jb20iLCJzdWIiOiI1MDUyODQwMzQ5NTA3NjIzOTMifQ.1xEMeh6-sFr03YcSDa2EgVg_IhOCt0YS6D1pQaeutgs', 'https://api.obsec.io/v1/gql', 'Demo');
+
+INSERT INTO apitoken_data (userid, token, api_endpoint, token_name) VALUES
+('1', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYXBpIiwidXNlcl9pZCI6NTA1Mjg0MDM0OTUwNzYyNTc4LCJvcmdfaWQiOiJhd2xvcHZ2ZHBndmJheGdnIiwib3JnX25hbWUiOiJsYWJkZW1vIiwibWZhX2VuYWJsZWQiOnRydWUsInJvbGUiOjksInVzZXJfaGFzaCI6Ijk5ZTgyODA2M2Q3Mzc4NmViNmU2ZDM1NzlkNTc3MGQzZTA3MzY3MGFmNTQ2Zjk2NmQzNWExMGY4MTgwOTZkNmYiLCJuYW1lIjoiQW50b2luZSBCb3VjaGFyZCIsImdpdmVuX25hbWUiOiJBbnRvaW5lIiwiZmFtaWx5X25hbWUiOiJCb3VjaGFyZCIsImVtYWlsIjoiYWJvdWNoYXJkQG9ic2lkaWFuc2VjdXJpdHkuY29tIiwiYWRkcmVzcyI6e30sInRlbmFudF9wcml2aWxlZ2VzIjpbeyJzZXJ2aWNlIjoiKiIsInRlbmFudHMiOlsiKiJdfV0sIm1vZHVsZV9wcml2aWxlZ2VzIjpbIioiXSwiYXVkIjoibGFiZGVtbyIsImV4cCI6MTcyMjEyNDc5OSwianRpIjoiYmE4YjQ0ZTgtNDg1OS00YmY4LTk1ZmEtNjMwN2Y3NWNhZDNkIiwiaWF0IjoxNjkwNDkxMDA4LCJpc3MiOiJvYnNlYy10ZXN0LmNvbSIsInN1YiI6IjUwNTI4NDAzNDk1MDc2MjU3OCJ9.ywUFKoktamfT2JBmoCV3u44FdGGQ1tk-NA9Wd-qQWvI', 'https://api.obsec.io/v1/gql', 'Labdemo');
+
+INSERT INTO apitoken_data (userid, token, api_endpoint, token_name) VALUES
+('1', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiYXBpIiwidXNlcl9pZCI6NTAxODg0OTg0OTUyOTE5MzY0LCJvcmdfaWQiOiJ6b3p3enh5Z2R4emdnemxlIiwib3JnX25hbWUiOiJzaGFyZWQtZGV2Iiwicm9sZSI6OSwidXNlcl9oYXNoIjoiYjZlZTk5MDBkOTJiMWYyYzIyNjZkODIyZDkwMzAyMzI1ZmU4ZmYzOGRhODI4YjI2ZGRhYmRjNGU5ZDE4YWQ0YyIsIm5hbWUiOiJBbnRvaW5lIEJvdWNoYXJkIiwiZ2l2ZW5fbmFtZSI6IkFudG9pbmUiLCJmYW1pbHlfbmFtZSI6IkJvdWNoYXJkIiwiZW1haWwiOiJhYm91Y2hhcmRAb2JzaWRpYW5zZWN1cml0eS5jb20iLCJhZGRyZXNzIjp7fSwidGVuYW50X3ByaXZpbGVnZXMiOlt7InNlcnZpY2UiOiIqIiwidGVuYW50cyI6WyIqIl19XSwibW9kdWxlX3ByaXZpbGVnZXMiOlsiKiJdLCJhdWQiOiJzaGFyZWQtZGV2IiwiZXhwIjoxNzQ4OTkwNjQwNjE1LCJqdGkiOiJlNmQwYjc0MC1hY2MzLTQ4ZmMtODJjMS0zZjVkNzU0ZWU2OTkiLCJpYXQiOjE3MTc0NTQ2NTAsImlzcyI6Im9ic2VjLXRlc3QuY29tIiwic3ViIjoiNTAxODg0OTg0OTUyOTE5MzY0In0.MLqfeGF9P9w-b0Jen0JhQfLiz0rSD665Mp5dv0ZSF4Y', 'https://api.dev.obsec.us/v1/gql', 'Shared Dev');

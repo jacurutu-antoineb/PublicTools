@@ -1,0 +1,13 @@
+query listPostureScores(
+      $interval: ListPostureScoresQueryInterval,
+      $filter: PostureScoreFilter
+    ) {
+      listPostureScores: listPostureScores(interval: $interval, filter: $filter) {
+        cursor
+        scores {
+          start_datetime
+          score {
+            value
+          }
+        }
+      }

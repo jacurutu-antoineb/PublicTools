@@ -1,0 +1,27 @@
+query getScoreRankWidgetData(
+  $filter: PostureScoreFilter
+  $interval: ListGroupedPostureScoresQueryInterval
+) {
+  listGroupedPostureScoresPlatforms: listGroupedPostureScores(
+    group_by: platforms
+    filter: $filter
+    interval: $interval
+  ) {
+    cursor
+    scores {
+      start_datetime
+      scores
+    }
+  }
+  listGroupedPostureScoresCompliance: listGroupedPostureScores(
+    group_by: standards
+    filter: $filter
+    interval: $interval
+  ) {
+    cursor
+    scores {
+      start_datetime
+      scores
+    }
+  }
+}

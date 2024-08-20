@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubble Entries</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="bubble" id="bubble1">
+        <span class="name">Bubble 1</span>
+        <span class="api-endpoint">https://www.google.com</span>
+        <span class="edit-field" onclick="editField('bubble1')">Edit</span>
+        <form id="form-bubble1" class="hidden-form" onsubmit="updateField('bubble1'); return false;">
+            <input type="text" class="name-input" value="Bubble 1">
+            <button type="submit" class="update-icon">&#10004;</button>
+        </form>
+    </div>
+    <div class="bubble" id="bubble2">
+        <span class="name">Bubble 2</span>
+        <span class="api-endpoint">https://www.google.com</span>
+        <span class="edit-field" onclick="editField('bubble2')">Edit</span>
+        <form id="form-bubble2" class="hidden-form" onsubmit="updateField('bubble2'); return false;">
+            <input type="text" class="name-input" value="Bubble 2">
+            <button type="submit" class="update-icon">&#10004;</button>
+        </form>
+    </div>
+    <!-- Add more bubble entries as needed -->
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+/* Add styles for the bubble entries */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bubble {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.api-endpoint {
+    font-style: italic;
+}
+
+.edit-field {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.hidden-form {
+    display: none;
+}
+
+.name-input {
+    margin-right: 10px;
+}
+
+.update-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+JavaScript (script.js):
+
+javascript
+Copy code
+// Function to toggle between displaying the field name and an editable input field
+function editField(bubbleId) {
+    const bubble = document.getElementById(bubbleId);
+    const nameSpan = bubble.querySelector('.name');
+    const form = bubble.querySelector('form');
+    
+    // Toggle visibility of elements
+    nameSpan.classList.toggle('hidden');
+    form.classList.toggle('hidden-form');
+
+    // Set initial value of input field to the current field name
+    const nameInput = form.querySelector('.name-input');
+    nameInput.value = nameSpan.textContent;
+}
+
+// Function to update the field name
+function updateField(bubbleId) {
+    const bubble = document.getElementById(bubbleId);
+    const nameSpan = bubble.querySelector('.name');
+    const form = bubble.querySelector('form');
+    const nameInput = form.querySelector('.name-input');
+
+    // Update the field name
+    nameSpan.textContent = nameInput.value;
+
+    // Toggle visibility of elements
+    nameSpan.classList.toggle('hidden');
+    form.classList.toggle('hidden-form');
+}
