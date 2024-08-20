@@ -1,1 +1,1 @@
-Read this
+Obsidian Lab demo setup
