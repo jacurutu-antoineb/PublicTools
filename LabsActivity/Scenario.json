@@ -1,0 +1,8 @@
+{ 
+  "release": 1.0,
+  "AppUser": ["Apps/Microsoft",
+	       "Apps/Google",
+	       "Apps/Salesforce",
+	       "Apps/Workday"],
+  "AppAPI" : ["Apps/Microsoft"]
+}

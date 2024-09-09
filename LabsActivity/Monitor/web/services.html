@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .service-box {
+            width: 48%; /* Each box takes up about half the row */
+            margin: 10px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            height: 300px; /* Set a fixed height for the outer box */
+        }
+
+        .log-box {
+            overflow-y: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 5px;
+        }
+
+        .log-box.large {
+            width: 48%; /* The first log box takes up half the width */
+            height: 100%; /* Takes full height of the outer box */
+        }
+
+        .log-box.small {
+            width: 48%; /* The smaller log boxes take half the width */
+            height: 48%; /* Each small box takes half the height */
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap; /* Allows wrapping of long log lines */
+            font-family: monospace;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="service-box">
+            <div class="log-box large">
+                <pre>alpha: Log data line 1
+alpha: Log data line 2
+alpha: Log data line 3
+...
+alpha: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>alpha: Log data line 1
+alpha: Log data line 2
+alpha: Log data line 3
+...
+alpha: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>alpha: Log data line 1
+alpha: Log data line 2
+alpha: Log data line 3
+...
+alpha: Log data line 50</pre>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="log-box large">
+                <pre>beta: Log data line 1
+beta: Log data line 2
+beta: Log data line 3
+...
+beta: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>beta: Log data line 1
+beta: Log data line 2
+beta: Log data line 3
+...
+beta: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>beta: Log data line 1
+beta: Log data line 2
+beta: Log data line 3
+...
+beta: Log data line 50</pre>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="log-box large">
+                <pre>delta: Log data line 1
+delta: Log data line 2
+delta: Log data line 3
+...
+delta: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>delta: Log data line 1
+delta: Log data line 2
+delta: Log data line 3
+...
+delta: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>delta: Log data line 1
+delta: Log data line 2
+delta: Log data line 3
+...
+delta: Log data line 50</pre>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="log-box large">
+                <pre>omicron: Log data line 1
+omicron: Log data line 2
+omicron: Log data line 3
+...
+omicron: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>omicron: Log data line 1
+omicron: Log data line 2
+omicron: Log data line 3
+...
+omicron: Log data line 50</pre>
+            </div>
+            <div class="log-box small">
+                <pre>omicron: Log data line 1
+omicron: Log data line 2
+omicron: Log data line 3
+...
+omicron: Log data line 50</pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

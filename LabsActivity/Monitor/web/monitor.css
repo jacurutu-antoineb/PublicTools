@@ -1,0 +1,62 @@
+body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+
+
+.service-box {
+            width: 45%; /* Each box takes up about half the row */
+            margin: 15px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row; /* Arrange the inner boxes in a row */
+            height: 300px; /* Set a fixed height for the outer box */
+        }
+
+        .log-box.large {
+            width: 50%; /* The first log box takes up half the width */
+            height: 100%; /* Takes full height of the outer box */
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 10px;
+        }
+
+        .log-box-container {
+            width: 50%; /* The container for the smaller boxes */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .log-box.small {
+            height: 48%; /* Each small box takes half the height of its container */
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+
+        .log-box.small:last-child {
+            margin-bottom: 0;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap; /* Allows wrapping of long log lines */
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+

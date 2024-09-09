@@ -7,6 +7,7 @@ import subprocess
 import os
 
 # Remove old logs
+os.system("mkdir -f logs")
 os.system("rm -f logs/*")
 os.system("docker-compose down")
 
@@ -59,9 +60,6 @@ with open('docker-compose.yml', 'w') as f:
 subprocess.run(['docker-compose', 'up', '-d'], check=True)
 
 services = [service for service in compose['services'].keys() if service != 'webmon']
-
-#with open('logs/compose.logs', 'w') as log_file_stdout, open('logs/compose.logs.err', 'w') as log_file_err:
-#    subprocess.run(['docker-compose', 'logs', '-f'] + services, check=True, stdout=log_file_stdout, stderr=log_file_err)
 
 processes = {}
 
