@@ -26,7 +26,7 @@ for app in data.get('AppUser', []):
     service_name = app_dir.lower() + "_user"
     compose['services'][service_name] = {
         'image': 'app-container:latest',  
-        'env_file': ['Monitor/environment.env'],
+        'env_file': ['environment.env'],
         'environment' : ['AppName='+service_name],
         'command': ['python3', app_dir + "/UserActivity.py"],
         'restart': 'always'
@@ -39,7 +39,7 @@ for app in data.get('AppAPI', []):
     if service_name not in compose['services']:
         compose['services'][service_name] = {
             'image': 'app-container:latest',  
-            'env_file': ['Monitor/environment.env'],
+            'env_file': ['environment.env'],
             'environment' : ['AppName='+service_name],
             'command': ['python3', app_dir + "/AppActivity.py"],
             'restart': 'always'
@@ -47,7 +47,7 @@ for app in data.get('AppAPI', []):
 
 compose['services']['webmon'] = {
         'image': 'obslabux:v1.0',
-        'env_file': ['Monitor/environment.env'],
+        'env_file': ['environment.env'],
         'volumes': ['./logs:/logs:ro'],
         'ports': ['0.0.0.0:5000:8080']
 }
